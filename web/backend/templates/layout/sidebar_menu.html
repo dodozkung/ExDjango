@@ -1,0 +1,132 @@
+<aside class="left-sidebar">
+  <div class="scroll-sidebar">
+    <nav class="sidebar-nav">
+      <ul id="sidebarnav">
+        <li>
+          <a class="has-arrow waves-effect waves-light" href="#" aria-expanded="false"><i class="mdi mdi-gauge"
+              style="top:50%; transform: translate(0%,-10%); word-wrap: break-word;"></i><span
+              class="hide-menu">&nbsp;&nbsp;&nbsp;ตั้งค่าเว็บไซต์</span></a>
+          <ul aria-expanded="false" class="collapse">
+            <li><a class="mg_l_30" href="{% url 'backend-mastercreate' %}"
+                style="margin-left:35px; width: 220px;">Header & Footer</a></li>
+            <li><a class="mg_l_30" href="{% url 'follow-contact' %}"
+                style="margin-left:35px; width: 220px;">ช่องทางติดตาม</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="waves-effect waves-light" href="{% url 'managemenu' %}" aria-expanded="false"><i
+              class="mdi mdi-menu" style="top:50%; transform: translate(0%,-10%);"></i><span
+              class="hide-menu">&nbsp;&nbsp;&nbsp;จัดการเมนู</span></a>
+
+        </li>
+        <li>
+          <a class="waves-effect waves-light" href="{% url 'backend-managetemplate' %}" aria-expanded="false">
+            <div style="display:flex;">
+              <div><i class="mdi mdi-laptop-windows" style="top:50%; transform: translate(0%,-10%);"></i></div><span
+                class="hide-menu" style="margin-left:11px;">จัดการ Template หน้าแรก</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a class="has-arrow waves-effect waves-light" href="#" aria-expanded="false">
+            <div style="display:flex;">
+              <div><i class="mdi mdi-email" style="top:50%; transform: translate(0%,-10%);"></i></div>
+              <span class="hide-menu" style="margin-left:11px;">
+                จัดการข้อมูลและโครงการ
+              </span>
+            </div>
+          </a>
+          <ul aria-expanded="false" class="collapse">
+            <li><a class="mg_l_30" href="{% url 'manageArea' %}"
+                style="margin-left:35px; width: 220px;">ข้อมูลพื้นที่</a></li>
+            <li><a class="mg_l_30" href="{% url 'ProjectView' %}"
+                style="margin-left:35px; width: 220px;">ข้อมูลโครงการ</a></li>
+            {% comment %} <li><a class="mg_l_30" href="#" style="margin-left:7px; width: 220px;">หัวข้อ</a></li> {%
+            endcomment %}
+            {% comment %} <li><a class="mg_l_30" href="{% url 'ProjectProgressView' %}"
+                style="margin-left:7px; width: 220px;">จัดการสถานะโครงการ</a></li> {% endcomment %}
+            {% comment %} <li><a class="mg_l_30" href="#" class="text-overflow-sidebar-menu"
+                style="margin-left:7px; width: 220px;">รายงานความก้าวหน้าโครงการ</a></li> {% endcomment %}
+            {% comment %} <li><a class="mg_l_30" href="#" class="text-overflow-sidebar-menu"
+                style="margin-left:7px; width: 220px;">เอกสารประกอบการรายงาน</a></li> {% endcomment %}
+          </ul>
+        </li>
+        <li>
+          <a class="has-arrow waves-effect waves-light" href="#" aria-expanded="false"><i class="mdi mdi-chart-bubble"
+              style="top:50%; transform: translate(0%,-10%);"></i><span
+              class="hide-menu">&nbsp;&nbsp;&nbsp;จัดการหน้าประวัติ</span></a>
+          <ul aria-expanded="false" class="collapse">
+            <li><a class="mg_l_30" href="{% url 'backend-history-index' %}" class="text-overflow-sidebar-menu"
+                style="margin-left:35px; width: 220px;">ข้อมูลประวัติ</a></li>
+            <li><a class="mg_l_30" href="{% url 'backend-history-content-index' %}" class="text-overflow-sidebar-menu"
+                style="margin-left:35px; width: 220px;">รูปภาพประกอบ</a></li>
+            <li><a class="mg_l_30" href="{% url 'backend-history-content-policy-index' %}"
+                class="text-overflow-sidebar-menu" style="margin-left:35px; width: 220px;">นโยบาย</a></li>
+            <li><a class="mg_l_30" href="{% url 'backend-history-content-work-index' %}"
+                class="text-overflow-sidebar-menu" style="margin-left:35px; width: 220px;">ผลงาน</a></li>
+            <li><a class="mg_l_30" href="{% url 'backend-history-content-award-index' %}"
+                class="text-overflow-sidebar-menu" style="margin-left:35px; width: 220px;">รางวัลและเกียรติคุณ</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="waves-effect waves-light" href="{% url 'manageCanvass' %}" aria-expanded="false">
+            <div style="display:flex;">
+              <div><i class="mdi mdi-folder" style="top:50%; transform: translate(0%,-10%);"></i></div><span
+                class="hide-menu" style="margin-left:11px;">จัดการกิจกรรมหาเสียง</span>
+            </div>
+          </a>
+          <!-- <ul aria-expanded="false" class="collapse">
+              </ul> -->
+        </li>
+        {% comment %} <li>
+          <a class="waves-effect waves-light" href="#" aria-expanded="false">
+            <div style="display:flex;">
+              <div><i class="mdi mdi-format-paint" style="top:50%; transform: translate(0%,-10%);"></i></div><span
+                class="hide-menu" style="margin-left:11px;">จัดการแขวงสำหรับโครงการ</span>
+            </div>
+          </a>
+          <!-- <ul aria-expanded="false" class="collapse">
+              </ul> -->
+        </li> {% endcomment %}
+        <li>
+          <a class="waves-effect waves-light" href="{% url 'backend-user' %}" aria-expanded="false"><i
+              class="mdi mdi-account-multiple-plus" style="top:50%; transform: translate(0%,-10%);"></i><span
+              class="hide-menu">&nbsp;&nbsp;&nbsp;จัดการผู้ใช้งาน</span></a>
+          <!-- <ul aria-expanded="false" class="collapse">
+            </ul> -->
+        </li>
+        {% comment %} <li>
+          <a class="has-arrow waves-effect waves-light" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"
+              style="top:50%; transform: translate(0%,-10%);"></i><span
+              class="hide-menu">&nbsp;&nbsp;&nbsp;จัดการหน้าแรก</span></a>
+          <ul aria-expanded="false" class="collapse">
+            <li><a class="mg_l_30" href="#" class="text-overflow-sidebar-menu"
+                style="margin-left:35px; width: 220px;">จัดการโครงการเเละกิจกรรมหาเสียง</a></li>
+            <li><a class="mg_l_30" href="#" style="margin-left:35px; width: 220px;">จัดการส่วน Section</a></li>
+            <li><a class="mg_l_30" href="#" style="margin-left:35px; width: 220px;">Contact Grid</a></li>
+            <li><a class="mg_l_30" href="#" style="margin-left:35px; width: 220px;">Contact Detail</a></li>
+          </ul>
+        </li> {% endcomment %}
+        <li>
+          <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+            <div style="display:flex;">
+              <div><i class="mdi mdi-comment-alert" style="top:50%; transform: translate(0%,-10%);"></i></div>
+              <span class="hide-menu" style="margin-left:11px;">ร้องทุกข์และแจ้งปัญหา</span>
+            </div>
+          </a>
+          <ul aria-expanded="false" class="collapse">
+            <li><a class="mg_l_30" href="{% url 'ComplaintAppeal' %}" class="text-overflow-sidebar-menu"
+                style="margin-left:35px; width: 220px;">
+                แสดงรายการร้องทุกข์<br>และแจ้งปัญหา</a></li>
+            <li><a class="mg_l_30" href="{% url 'manageMainComplaintContact' %}"
+                style="margin-left:35px; width: 220px;">
+                แก้ไขช่องทางร้องทุกข์<br>และแจ้งปัญหา</a></li>
+            <li><a class="mg_l_30" href="{% url 'manageMainComplaintCategory' %}"
+                style="margin-left:35px; width: 220px;">
+                แก้ไขหมวดหมู่ร้องทุกข์<br>และแจ้งปัญหา</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</aside>

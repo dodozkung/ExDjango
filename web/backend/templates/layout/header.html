@@ -1,0 +1,54 @@
+<header class="topbar">
+  <nav class="navbar top-navbar navbar-toggleable-sm navbar-light">
+    <div class="navbar-header">
+      <a class="navbar-brand el-header-color" href="{% url 'backend-index' %}">
+        <b class="light-logo">
+          EBO
+        </b>
+        <span class="light-logo">
+          <h4 style="color: white;">Election Back Office</h4>
+        </span>
+      </a>
+    </div>
+    <div class="navbar-collapse">
+      <ul class="navbar-nav mr-auto mt-md-0">
+        <li class="nav-item">
+          <a
+            class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark"
+            href="javascript:void(0)"
+            ><i class="mdi mdi-menu"></i
+          ></a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark"
+            href="javascript:void(0)"
+            ><i class="ti-menu"></i
+          ></a>
+        </li>
+      </ul>
+      <ul class="navbar-nav my-lg-0">
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle text-muted waves-effect waves-dark"
+            href=""
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            ><i class="ti-user"></i>&nbsp;&nbsp;<span id="nav-username"></span></a>
+          <div class="dropdown-menu dropdown-menu-right scale-up">
+            <ul class="dropdown-user">
+              
+              <li>
+                <a href="{% url 'backend-profile' pk=user.pk %}"><i class="mdi mdi-account-circle" style="color:#263238 !important; font-size:20px;"></i><b>&nbsp;&nbsp;แก้ไขข้อมูลส่วนตัว</b></a>
+              </li>
+              <li>
+                <a href="{% url 'backend-logout' %}"><i class="fa fa-light fa-power-off" style="color:#263238 !important; font-size:19px; margin-left:1.5px;"></i><b>&nbsp;&nbsp;ออกจากระบบ</b></a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

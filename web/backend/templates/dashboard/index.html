@@ -1,0 +1,67 @@
+{% extends "backend/layout/main_page.html" %}
+{% load static %}
+{% block content %}
+<main class="col-md-12 ms-sm-auto col-lg-12 px-md-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h1 class="h2">ยินดีต้อนรับเข้าสู่ระบบหลังบ้าน</h1>
+      <div class="btn-toolbar mb-2 mb-md-0">
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+{% block script_js %}
+<script src="{% static '/backend/js/dashboard.js' %}?v={{version}}"></script>
+<script>
+  function testapi(){
+      ////
+    $.ajaxSetup({ 
+      beforeSend: function(xhr, settings) {
+          function getCookie(name) {
+              var cookieValue = null;
+              if (document.cookie && document.cookie != '') {
+                  var cookies = document.cookie.split(';');
+                  for (var i = 0; i < cookies.length; i++) {
+                      var cookie = jQuery.trim(cookies[i]);
+                      // Does this cookie string begin with the name we want?
+                      if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                          break;
+                      }
+                  }
+              }
+              return cookieValue;
+          }
+          if (!(/^http:.*/.test(settings.url) || /^https:.*/.test(settings.url))) {
+              // Only send the token to relative URLs i.e. locally.
+              xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+          }
+      } 
+  });
+  ////
+
+  var data = {
+    data1: $('#data1').val(),
+    data2: $('#data2').val(),
+    data3: $('#data3').val()
+  };
+  $.ajax({
+    url: "{% url 'testapi' %}",
+    data: data,
+    type: 'post',
+    dataType: "json",
+    success: function (res) {
+      $.toast({
+        heading: 'เสร็จสิ้น',
+        text: res.message,
+        position: 'top-right',
+        loaderBg:'#ff6849',
+        icon: 'success',
+        hideAfter: 3500, 
+        stack: 6
+      });
+    }
+  });
+}
+</script>
+{% endblock %}

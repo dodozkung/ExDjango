@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{description}}">
+  <title>{{title}}-Admin Management</title>
+
+  <link rel="shortcut icon" type="image/jpg" href="{% static 'backend/images/W2-W.png' %}"/>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static '/backend/css/plugins/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static '/backend/assets/toast-master/css/jquery.toast.css' %}" rel="stylesheet">
+  <link href="{% static '/backend/assets/icheck/skins/all.css' %}" rel="stylesheet">
+  <!--nestable CSS -->
+  <link href="/static/backend/assets/nestable/nestable.css" rel="stylesheet" type="text/css" />  
+
+  <!-- Custom styles for this template -->
+  <link href="{% static '/backend/css/style.css' %}?v={{version}}" rel="stylesheet">
+  <link href="{% static '/backend/css/color/green.css' %}" id="theme" rel="stylesheet"> 
+  <!--timepicker-->
+ 
+</head>
+<body class="fix-header card-no-border">
+  <div class="preloader">
+    <svg class="circular" viewBox="25 25 50 50">
+      <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+    </svg>
+  </div>
+  <div id="main-wrapper">
+    {% include 'backend/layout/header.html' %}
+
+    {% include 'backend/layout/sidebar_menu.html' %} 
+
+    <div class="page-wrapper">
+      <div class="container-fluid">
+          <div class="row page-titles">
+              <div class="col-md-5 col-8 align-self-center">
+                  <h3 class="text-themecolor m-b-0 m-t-0">{{title}}</h3>
+                  <ol class="breadcrumb">
+                      
+                      {% block bread %}{% endblock %}
+                  </ol>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+                        {% block paper %}{% endblock %}
+            </div>
+          </div>
+          <div class="row">
+              <div class="col-12">
+                  <div class="card">
+                      <div class="card-block p-0">
+                          {% block content %}{% endblock %}
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  
+  </div>
+  </div>
+    <script>
+      /****************************
+      *
+      * Config JS
+      *
+      *****************************/
+      var config = {
+        base_url: "{% url 'backend-index' %}"
+      }
+      </script>
+    <!-- <script src="{% static '/backend/js/plugins/jquery-3.6.0.min.js' %}?v={{version}}"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script> -->
+    <!-- <script src="{% static '/backend/js/plugins/jquery.validate.min.js' %}?v={{version}}"></script>  -->
+    
+    <!-- <script src="{% static '/backend/js/plugins/bootstrap.bundle.min.js' %}?v={{version}}"></script> -->
+    <script src="{% static '/backend/assets/jquery/plugins/jquery.min.js' %}?v={{version}}"></script>
+    <script src="{% static '/backend/js/plugins/jquery-3.1.1.min.js' %}?v={{version}}"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script> -->
+    <script src="{% static '/backend/js/plugins/tether.min.js' %}?v={{version}}"></script>
+    <script src="{% static '/backend/js/plugins/bootstrap.min.js' %}?v={{version}}"></script>
+    <script src="{% static '/backend/js/plugins/jquery.slimscroll.js' %}?v={{version}}"></script>
+    <script src="{% static '/backend/js/plugins/waves.js' %}?v={{version}}"></script>
+    <script src="{% static '/backend/js/plugins/sidebarmenu.js' %}?v={{version}}"></script>
+    <script src="{% static '/backend/assets/sticky-kit-master/dist/sticky-kit.min.js' %}?v={{version}}"></script>
+    <script src="{% static '/backend/assets/sparkline/jquery.sparkline.min.js' %}?v={{version}}"></script>
+    <script src="{% static '/backend/js/plugins/custom.min.js' %}?v={{version}}"></script>
+    <script src="{% static '/backend/assets/toast-master/js/jquery.toast.js' %}?v={{version}}"></script>
+    <script src="{% static '/backend/js/plugins/toastr.js' %}?v={{version}}"></script>
+    <script src="{% static '/backend/js/plugins/moment.js' %}?v={{version}}"></script>
+    
+    {% block script_js_new %}{% endblock %}
+    <script src="{% static '/backend/assets/styleswitcher/jQuery.style.switcher.js' %}?v={{version}}"></script>
+    <script src="{% static '/backend/assets/nestable/jquery.nestable.js' %}?v={{version}}"></script>
+    
+    <!--timepicker-->
+     <script src="{% static '/backend/assets/datetimepicker/bootstrap-datepicker.js' %}"></script>
+     <script src="{% static '/backend/assets/datetimepicker/bootstrap-datepicker.th.js' %}"></script>
+     <script src="{% static '/backend/assets/datetimepicker/bootstrap-datepicker-thai.js' %}"></script> 
+
+     <script src="{% static '/backend/assets/bootstrap.timepicker/bootstrap-datetimepicker.min.js' %}"></script>
+
+     <script src="{% static '/backend/js/paginations.js' %}?v={{version}}"></script>
+
+
+     <!-- <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script> -->
+    <script src="{% static '/backend/js/plugins/jquery.validate-1.11.1.min.js' %}?v={{version}}"></script> 
+    <script src="{% static '/backend/js/plugins/jquery.loading.min.js' %}?v={{version}}"></script> 
+    <script src="{% static '/backend/js/plugins/alertify.js' %}?v={{version}}"></script> 
+    <script>$('#nav-username').html(localStorage.getItem('username'))</script>  
+    {% block script_js %}{% endblock %}
+</body>
+</html>

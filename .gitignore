@@ -1,0 +1,10 @@
+web/backend/__pycache__/
+web/backend/migrations/
+
+__pycache__/
+web/frontend/__pycache__/
+web/frontend/migrations/__pycache__/
+
+web/web/__pycache__/
+
+env

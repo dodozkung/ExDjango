@@ -1,0 +1,44 @@
+version: "3"
+services:
+    service_web:
+        container_name: service_web
+        restart: always
+        build: ./backend/
+        depends_on:
+            - service-db
+        ports:
+            - "9090:8000"
+        volumes:
+            - ./backend/:/usr/src/app
+        networks:
+            - nw_gateway
+        command: >
+            bash -c "
+                find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
+                find . -path "*/migrations/*.pyc"  -delete &&
+                cp .env.dev .env &&
+                python manage.py runserver 0.0.0.0:8000"
+                
+    service-db:
+      container_name: service-db
+      image: postgres:11
+      restart: always
+      environment:
+          POSTGRES_PASSWORD: 4hPJ3qq5l7cNgAdFPBIzVbFdl
+          POSTGRES_USER: db_backend
+          POSTGRES_DB: db_backend
+      networks:
+          - nw_gateway
+
+    pgadmin:
+        image: dpage/pgadmin4
+        ports:
+            - "8099:80"
+        environment:
+            - PGADMIN_DEFAULT_EMAIL=admin@mail.com
+            - PGADMIN_DEFAULT_PASSWORD=112233
+        networks:
+            - nw_gateway
+
+networks:
+    nw_gateway:
